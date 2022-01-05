@@ -25,3 +25,8 @@
 ---
 반복문의 한번 수행으로 두 개의 원하는 값을 모두 찾을 수 있다.<br>
 이 경우 수행 속도는 나열된 수의 개수에 비례하므로 O(n)이 된다.
+
+## ✌️ 손코딩
+
+---
+![MinMaxProblem](https://user-images.githubusercontent.com/79829085/148140667-f9e07f26-d6ff-4043-b0f8-837820f16355.jpg)
