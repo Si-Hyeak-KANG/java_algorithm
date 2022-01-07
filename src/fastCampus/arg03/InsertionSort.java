@@ -1,5 +1,7 @@
 package fastCampus.arg03;
 
+// 삽입 정렬
+// 수으ㅔ 예 50, 80, 70, 10, 60, 20, 40, 30
 public class InsertionSort {
 
     public static void insertionSort(int[] arr, int count) {
