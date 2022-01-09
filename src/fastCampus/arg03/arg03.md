@@ -54,3 +54,4 @@
 - heap의 parent 위치하는 숫자는 child 숫자보다 크거나 작아야함
 - 배열의 0번 인덱스는 잘 안씀
 - parent의 위치는 주로 child index의 1/2에 해당
+- 우선순위 큐(Priority Queue)를 구현할 때 Heap 활용
