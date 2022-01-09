@@ -1,4 +1,4 @@
-#03. 정렬 알고리즘
+# 03. 정렬 알고리즘
 
 ---
 
@@ -24,7 +24,14 @@
 - 다음 50,80과 70을 비교했을 때 70은 80보다 작으니 80보다 앞으로 가되, 50보다 크니 50뒤에 머무른다.
 - 다음 50,70,80 과 10을 비교했을 때, 80부터 순차적으로 비교를 하고 자신에게 맞는 위치를 찾아간다.
 
-###3) 선택 정렬(Selection Sort)
+<손코딩>
+![InsertionSort1](https://user-images.githubusercontent.com/79829085/148561384-44774110-2c42-45ac-9bbd-bd80843a2867.jpg)
+<br>
+![InsertionSort2](https://user-images.githubusercontent.com/79829085/148561408-2652f974-6cbc-4b9d-9431-f00b1f1cfe5c.jpg)
+<br>
+---
+
+### 3) 선택 정렬(Selection Sort)
 
 - 어센딩 정렬 ) 처음부터 끝까지 스캔하고, 제일 작은 수 앞으로 가져옴
 - 제일 작은 수를 제외해서 처음부터 스캔 시작
@@ -35,11 +42,11 @@
 
 `검색 범위가 점점 감소하는 방식`
 
-###1) 퀵 정렬(Quick Sort)
+### 1) 퀵 정렬(Quick Sort)
 
-###2) 병합 정렬(Merge Sort)
+### 2) 병합 정렬(Merge Sort)
 
-###3) 힙 정렬(Heap Sort)
+### 3) 힙 정렬(Heap Sort)
 
 - Heap_Tree -> 실제로 배열로 많이 구현
 - min heap(가장 작은 수가 위에)_asc / max heap(가장 큰 수가 위에)_desc
