@@ -24,6 +24,8 @@
 - 다음 50,80과 70을 비교했을 때 70은 80보다 작으니 80보다 앞으로 가되, 50보다 크니 50뒤에 머무른다.
 - 다음 50,70,80 과 10을 비교했을 때, 80부터 순차적으로 비교를 하고 자신에게 맞는 위치를 찾아간다.
 
+---
+
 <손코딩>
 ![InsertionSort1](https://user-images.githubusercontent.com/79829085/148561384-44774110-2c42-45ac-9bbd-bd80843a2867.jpg)
 <br>
@@ -55,3 +57,13 @@
 - 배열의 0번 인덱스는 잘 안씀
 - parent의 위치는 주로 child index의 1/2에 해당
 - 우선순위 큐(Priority Queue)를 구현할 때 Heap 활용
+
+---
+
+<손코딩>
+
+![HeapSort1](https://user-images.githubusercontent.com/79829085/148674464-977671bc-7d80-4896-a6c1-6e345336726e.jpg) <br>
+![HeapSort2](https://user-images.githubusercontent.com/79829085/148674467-7554514f-91f2-4692-8bcb-0eca519f3f13.jpg) <br>
+![HeapSort3](https://user-images.githubusercontent.com/79829085/148674470-84ff9ac3-a700-4eae-ad51-db5a483b09a9.jpg) <br>
+![HeapSort_delete1](https://user-images.githubusercontent.com/79829085/148674473-72bcfa86-5203-416d-93b1-53e9834b00fd.jpg) <br>
+![HeapSort_delete2](https://user-images.githubusercontent.com/79829085/148674476-a73ce2b1-6c63-47ca-a633-e2cc4973faa4.jpg)
