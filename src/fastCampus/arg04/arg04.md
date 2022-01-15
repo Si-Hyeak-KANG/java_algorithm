@@ -30,8 +30,8 @@ ex) 미로찾기, 출구찾기
 
 ### 3) 그래프의 예
 
-![img_2.png](img_2.png) <br>
-![img_3.png](img_3.png)
+![img_2.png](img/img_2.png) <br>
+![img_3.png](img/img_3.png)
 
 ### 4) 그래프의 표현
 
@@ -79,28 +79,28 @@ ex) 미로찾기, 출구찾기
 
 ### 탐색 방법
 
-![img_4.png](img_4.png) <br> * 예시 그래프
+![img_4.png](img/img_4.png) <br> * 예시 그래프
 
 
-![img_6.png](img_6.png)
+![img_6.png](img/img_6.png)
 
 1) 시작할 노드를 스택에 넣는다. (그래프는 트리와 다르게 반드시 0부터 시작할 필요없음)
 2) 위 사진에서는 0으로 시작할 것으로 가정
 
-![img_7.png](img_7.png)
+![img_7.png](img/img_7.png)
 
 1) 0을 스택에서 빼면서 출력을 한다.
 2) 0과 인접한(연결된) 노드를 스택에 넣는다. (1,2)
 3) 인접한 노드들을 넣을 때 순서는 상관없다. (1이 먼저 들어갈 수도 있고, 2가 먼저 들어갈 수도 있음)
 
-![img_8.png](img_8.png)
+![img_8.png](img/img_8.png)
 
 1) 쌓는 순서는 상관없으나, 스택 특성상 위에 있는 것부터 출력을 해야한다.
 2) 2가 위에 있어서 2를 뺀다.
 3) 2와 인접한 노드들을 넣어준다. (0,2,6)
 4) 인접한 노드 중 0은 이미 스택에 넣었으니 다시 넣지 않는다.
 
-![img_9.png](img_9.png)
+![img_9.png](img/img_9.png)
 
 1) 스택에서 가장 위에 있는 6을 출력한다.
 2) 6의 인접한 노드를 확인한다.(2)
@@ -108,11 +108,11 @@ ex) 미로찾기, 출구찾기
 
 `위 같은 방식이 계속 반복되므로 이하 생략`
 
-![img_10.png](img_10.png)
-![img_11.png](img_11.png)
-![img_12.png](img_12.png)
-![img_13.png](img_13.png)
-![img_14.png](img_14.png)
+![img_10.png](img/img_10.png)
+![img_11.png](img/img_11.png)
+![img_12.png](img/img_12.png)
+![img_13.png](img/img_13.png)
+![img_14.png](img/img_14.png)
 
 결과 : `0 - 2 - 6 - 5 - 4 - 1 - 3 - 7` 순으로 탐색을 했다는 것을 알 수 있다. <br>
 만약 인접한 노드가 스택에 쌓이는 순서가 바뀌었다면 탐색 방향은 달라질 수 있다. <br>
@@ -132,31 +132,31 @@ ex) 미로찾기, 출구찾기
 
 ### 탐색 방법
 
-![img_15.png](img_15.png)<br>* 예시 그래프
+![img_15.png](img/img_15.png)<br>* 예시 그래프
 
-![img_16.png](img_16.png)
+![img_16.png](img/img_16.png)
 
 1) 시작할 노드를 Queue에 넣는다. (DFS와 동일하게 시작 노드는 어떤거든 상관없음)
 2) Queue의 특징은 위 그림에서 보이는 것처럼 위(뒤)에서 노드가 들어오고 맨 아래(앞)에 위치한 노드부터 출력된다.
 
-![img_17.png](img_17.png)
+![img_17.png](img/img_17.png)
 
  * 0을 queue에서 빼고 0과 인접한 노드를 넣는다.(1,2)
 
 
-![img_18.png](img_18.png)
+![img_18.png](img/img_18.png)
 
  * 1을 빼서 출력해주고, 1과 인접한 노드들을 2 위(뒤)에 넣어준다.
  * 1과 인전 노드는 0, 3, 4 이지만 0은 이미 queue에 넣어졌었기 때문에 다시 넣지 않는다.
 
-![img_19.png](img_19.png)
+![img_19.png](img/img_19.png)
 
  * queue의 가장 아래(앞)에 해당하는 노드 2를 빼서 출력하고, 2와 인접한 노드를 넣어준다. 
 
 `위 같은 방식이 계속 반복되므로 이해 생략`
 
-![img_20.png](img_20.png)
-![img_21.png](img_21.png)
-![img_22.png](img_22.png)
+![img_20.png](img/img_20.png)
+![img_21.png](img/img_21.png)
+![img_22.png](img/img_22.png)
 
 결과 : 0 - 1 - 2 - 3 - 4 - 5 -6 -7 순으로 탐색이 된 것을 알 수 있다.
