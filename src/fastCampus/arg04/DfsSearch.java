@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class DfsSearch {
 
-    int count;
+    int count; // 갯수
     boolean[] visited;
     Stack<Integer> stack;
     int[][] matrix;

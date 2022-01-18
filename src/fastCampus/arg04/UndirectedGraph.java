@@ -16,6 +16,7 @@ public class UndirectedGraph {
     }
 
     public int[][] getMatrix() {
+
         return vertexMatrix;
     }
 }
