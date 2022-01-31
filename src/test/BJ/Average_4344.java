@@ -8,9 +8,7 @@ public class Average_4344 {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-
         int testCase = sc.nextInt(); // test 횟수 입력
-        double[] average = new double[testCase];
 
         for(int i=0;i<testCase;i++) {
             int n = sc.nextInt(); // 학생 수
@@ -31,11 +29,8 @@ public class Average_4344 {
                     count++;
                 }
             }
-            average[i] = (count/n)*100;
-        }
-        for(int i=0; i<testCase; i++) {
-            System.out.printf("%.3f%%\n",average[i]);
-        }
 
+            System.out.printf("%.3f%%\n",(count/n)*100);
+        }
     }
 }
