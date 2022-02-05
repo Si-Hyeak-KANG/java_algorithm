@@ -4,10 +4,11 @@ package test.BJ;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class FindAlphabet_10809 {
 
-    public static void main(String[] args) throws IOException {
+/*    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int[] arr = new int[26];
@@ -30,5 +31,13 @@ public class FindAlphabet_10809 {
             System.out.print(val + " ");
         }
 
+    }*/
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String input = sc.next();
+
+        for (char c = 'a' ; c <= 'z' ; c++)
+            System.out.print(input.indexOf(c) + " ");
     }
 }
