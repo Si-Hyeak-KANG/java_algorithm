@@ -14,10 +14,11 @@ public class RectangleEscape_1085 {
         int w = Integer.parseInt(st.nextToken());
         int h = Integer.parseInt(st.nextToken());
 
-        w-x;
-        x-0;
-        h-y;
-        y-0;
+        //Math의 min 메소드 활용
+        int x_min = Math.min(x, w-x); // x축 최소거리
+        int y_min = Math.min(y, h-y); // y축 최소거리
+
+        System.out.println(Math.min(x_min,y_min));
 
     }
 }
