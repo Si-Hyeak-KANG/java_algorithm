@@ -1,4 +1,4 @@
-package test.BJ;
+package test.BJ.math;
 
 import java.io.BufferedReader;
 import java.io.IOException;

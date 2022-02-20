@@ -1,4 +1,4 @@
-package test.BJ;
+package test.BJ.array;
 
 import java.util.Scanner;
 // Scanner 와 시간복잡도 O(n) 수행, 1712ms

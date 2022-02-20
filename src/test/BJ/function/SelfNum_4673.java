@@ -1,4 +1,4 @@
-package test.BJ;
+package test.BJ.function;
 
 public class SelfNum_4673 {
 

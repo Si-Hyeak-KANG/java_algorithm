@@ -1,4 +1,4 @@
-package test.BJ;
+package test.BJ.inOut;
 
 import java.util.Scanner;
 

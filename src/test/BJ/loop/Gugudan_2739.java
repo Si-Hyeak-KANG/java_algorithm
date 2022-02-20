@@ -1,4 +1,4 @@
-package test.BJ;
+package test.BJ.loop;
 
 import java.util.Scanner;
 

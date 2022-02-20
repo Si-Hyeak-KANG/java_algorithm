@@ -1,4 +1,4 @@
-package test.BJ;
+package test.BJ.inOut;
 
 public class Io_10718 {
     public static void main(String[] args) {
