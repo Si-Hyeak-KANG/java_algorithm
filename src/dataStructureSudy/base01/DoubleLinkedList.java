@@ -111,7 +111,7 @@ public class DoubleLinkedList<T> {
                     nodePrev.next.next = node;
 
                     nodePrev.next.prev = nodePrev;
-                    nodePrev = nodePrev.next;
+
 
                     return true;
                 } else {
