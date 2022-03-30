@@ -84,7 +84,7 @@ public class DoubleLinkedList<T> {
     }
 
     /**
-     * 지친한 노드의 앞에 새로운 노드 추가
+     * 지칭한 노드의 앞에 새로운 노드 추가
      * @param existedData : 해당 데이터를 가진 노드 지칭
      * @param addData : 새로 추가할 노드의 데이터
      * @return : 노드를 추가할 수 이 있을 때는 true, 실패일 때는 false
