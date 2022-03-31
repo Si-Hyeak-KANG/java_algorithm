@@ -11,10 +11,14 @@ public class Hash {
 
     public class Slot {
 
+        String key;
         String value;
+        Slot next;
 
-        Slot(String value) {
+        Slot(String key, String value) {
+            this.key = key;
             this.value = value;
+            this.next = null;
         }
     }
 
@@ -39,10 +43,25 @@ public class Hash {
 
         Integer address = this.hashFunction(key);
 
-        if(this.hashTable[address] != null) {
-            this.hashTable[address].value = value;
+        if(this.hashTable[address] != null) { // 해당 주소에 이미 데이터가 존재할 경우
+
+            Slot findSlot = this.hashTable[address]; // head에 해당
+            Slot prevSlot = this.hashTable[address];
+
+            while (findSlot != null) {
+                if(findSlot.key == key) {
+                    findSlot.value = value;
+                    return true;
+                } else {
+                    prevSlot = findSlot;
+                    findSlot = findSlot.next;
+                }
+            }
+
+            prevSlot.next = new Slot(key, value);
+
         } else {
-            this.hashTable[address] = new Slot(value);
+            this.hashTable[address] = new Slot(key, value);
         }
         return true;
     }
@@ -51,7 +70,16 @@ public class Hash {
         Integer address = this.hashFunction(key);
 
         if(this.hashTable[address] != null) {
-            return this.hashTable[address].value;
+            Slot findSlot = this.hashTable[address];
+            while(findSlot != null) {
+                if(findSlot.key == key) {
+                    return findSlot.value;
+                } else {
+                    findSlot = findSlot.next;
+                }
+            }
+            return null;
+
         } else {
             return null;
         }
@@ -64,7 +92,13 @@ public class Hash {
         myHash.saveData("DaveLee","01094064180");
         myHash.saveData("Leesoo","01098251090");
         myHash.saveData("James","01044444180");
+        myHash.saveData("Daves","01012347180");
+        myHash.saveData("Dalyes","01099999999");
 
         System.out.println(myHash.getData("LeeSoo"));
+        System.out.println(myHash.getData("James"));
+        System.out.println(myHash.getData("DaveLee"));
+        System.out.println(myHash.getData("Daves"));
+        System.out.println(myHash.getData("Dalyes"));
     }
 }
