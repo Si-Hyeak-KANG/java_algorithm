@@ -90,7 +90,7 @@ public class Hash_Chaining {
         Hash_Chaining myHash = new Hash_Chaining(20);
 
         myHash.saveData("DaveLee","01094064180");
-        myHash.saveData("Leesoo","01098251090");
+        myHash.saveData("LeeSoo","01098251090");
         myHash.saveData("James","01044444180");
         myHash.saveData("Daves","01012347180");
         myHash.saveData("Dalyes","01099999999");
