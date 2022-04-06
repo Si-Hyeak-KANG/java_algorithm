@@ -44,6 +44,7 @@ public class MyBST {
             }
         }
 
+        return false;
     }
 
     /**1
@@ -53,6 +54,7 @@ public class MyBST {
      */
     public Node search(int data) {
 
+        return null;
     }
 
     /**
@@ -62,6 +64,7 @@ public class MyBST {
      */
     public boolean delete(int data) {
 
+        return false;
     }
 
     /**
