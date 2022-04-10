@@ -5,23 +5,34 @@ import java.util.Collections;
 
 public class BubbleSort {
 
-    public static void main(String[] args) {
+    public ArrayList<Integer> sort(ArrayList<Integer> dataList) {
+        for(int i=0; i < dataList.size() -1; i++) {
+            boolean swap = false;
 
-        ArrayList<Integer> dataList = new ArrayList<Integer>();
-
-        dataList.add(2);
-        dataList.add(1);
-        dataList.add(4);
-
-        for(int i=0; i<dataList.size()-1;i++) {
-
-            if(dataList.get(i) > dataList.get(i+1)) {
-                Collections.swap(dataList,i,i+1);
+            for(int j =0; j < dataList.size() - 1 - i; j++) {
+                if (dataList.get(j) > dataList.get(j+1)) {
+                    Collections.swap(dataList, j, j+1);
+                    swap=true;
+                }
             }
 
+            if (swap == false) {
+                break;
+            }
         }
 
-        System.out.println(dataList);
+        return dataList;
+    }
 
+    public static void main(String[] args) {
+
+        ArrayList<Integer> testData = new ArrayList<Integer>();
+
+        for(int i = 0; i<100; i++) {
+            testData.add((int)(Math.random() * 100));
+        }
+
+        BubbleSort bSort = new BubbleSort();
+        System.out.println(bSort.sort(testData));
     }
 }
