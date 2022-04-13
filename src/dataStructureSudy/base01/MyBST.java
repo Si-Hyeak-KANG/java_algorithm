@@ -12,7 +12,7 @@ public class MyBST {
      */
     public class Node {
 
-        int value = -1; // data
+        int value; // data
         Node left; // 왼쪽 노드
         Node right; // 오른쪽 노드
 
