@@ -14,6 +14,8 @@ public class InsertionSort {
                 if(dataList.get(i) < dataList.get(j)) {
                     Collections.swap(dataList, i , j);
                     i = j;
+                } else {
+                    break;
                 }
             }
 
@@ -26,7 +28,7 @@ public class InsertionSort {
 
         ArrayList<Integer> dataList = new ArrayList<>();
 
-        for(int i = 1; i < 50; i++ ) {
+        for(int i = 0; i < 50; i++ ) {
             dataList.add((int)(Math.random() * 100));
         }
 
