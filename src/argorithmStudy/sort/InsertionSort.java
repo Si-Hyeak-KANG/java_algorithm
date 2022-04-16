@@ -1,4 +1,4 @@
-package argorithmStudy.base01;
+package argorithmStudy.sort;
 
 import java.util.ArrayList;
 import java.util.Collections;
