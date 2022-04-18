@@ -28,9 +28,15 @@ public class SelectionSort {
 
         ArrayList<Integer> dataList = new ArrayList<>();
 
-        for(int i = 0; i<50; i++) {
-            dataList.add((int)(Math.random() * 100));
-        }
+        dataList.add(1);
+        dataList.add(3);
+        dataList.add(5);
+        dataList.add(2);
+        dataList.add(10);
+        dataList.add(25);
+        dataList.add(18);
+
+        System.out.println(dataList);
 
         SelectionSort sortTest = new SelectionSort();
 
