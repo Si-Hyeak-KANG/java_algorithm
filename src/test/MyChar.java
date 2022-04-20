@@ -105,6 +105,10 @@ public class MyChar {
             System.out.println("소문자가 아닙니다.");
     }
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         MyChar myChar = new MyChar('E');
