@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class MergeSort {
 
-    // for문을 이용하여 만든 split
+    // for 문을 이용하여 만든 split
     public void split(ArrayList<Integer> array) {
 
         ArrayList<Integer> firstArray = new ArrayList<>();
