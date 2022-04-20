@@ -1,10 +1,10 @@
 package argorithmStudy.sort2;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MergeSort {
 
+    // for문을 이용하여 만든 split
     public void split(ArrayList<Integer> array) {
 
         ArrayList<Integer> firstArray = new ArrayList<>();
@@ -24,6 +24,24 @@ public class MergeSort {
         System.out.println(secondArray);
     }
 
+    //ArrayList의 subList 활용
+    public void split2(ArrayList<Integer> array) {
+
+        // 배열의 크기가 1 이하면 나눌 것이 없음
+        if(array.size() <= 1) {
+            return; // return 으로 메서드 종료
+        }
+
+        int medium = array.size() / 2;
+
+        ArrayList<Integer> leftArr = new ArrayList<>(array.subList(0, medium)); // array 의 인덱스 0번부터 medium -1 까지를 배열로 만듦
+        ArrayList<Integer> rightArr = new ArrayList<>(array.subList(medium, array.size())); // array 의 인덱스 medium 부터 array.size() -1 까지를 배열로 만듦
+
+        System.out.println(leftArr);
+        System.out.println(rightArr);
+
+    }
+
     public static void main(String[] args) {
 
         ArrayList<Integer> array = new ArrayList<>();
@@ -38,7 +56,7 @@ public class MergeSort {
 
         MergeSort test = new MergeSort();
 
-        test.split(array);
+        test.split2(array);
 
     }
 }
