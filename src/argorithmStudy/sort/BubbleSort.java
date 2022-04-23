@@ -20,7 +20,6 @@ public class BubbleSort {
                 break;
             }
         }
-
         return dataList;
     }
 
