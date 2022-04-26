@@ -34,13 +34,15 @@ public class SelectionSort {
         dataList.add(2);
         dataList.add(10);
         dataList.add(25);
-        dataList.add(18);
+        dataList.add(25);
 
         System.out.println(dataList); // [1,3,5,2,10,25,18]
 
         SelectionSort sortTest = new SelectionSort();
 
         System.out.println(sortTest.sort(dataList)); // [1,2,3,5,10,18,25]
+
+        System.out.println();
     }
 
 }
