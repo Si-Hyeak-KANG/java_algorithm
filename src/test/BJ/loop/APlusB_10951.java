@@ -9,7 +9,7 @@ public class APlusB_10951 {
 
     public static void main(String[] args) throws IOException {
 
-
-
+        char A='c';
+        int result = Integer.parseInt("A");
     }
 }
