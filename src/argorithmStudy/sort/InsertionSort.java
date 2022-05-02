@@ -13,7 +13,7 @@ public class InsertionSort {
 
                 if(dataList.get(i) < dataList.get(j)) {
                     Collections.swap(dataList, i , j);
-                    i = j;
+                   i = j;
                 } else {
                     break;
                 }
