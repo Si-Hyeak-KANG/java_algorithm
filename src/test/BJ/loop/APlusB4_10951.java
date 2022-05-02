@@ -1,15 +1,23 @@
 package test.BJ.loop;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 
 public class APlusB4_10951 {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
-        char A='c';
-        int result = Integer.parseInt("A");
+        Scanner sc = new Scanner(System.in);
+
+        while(true) {
+
+            int A = sc.nextInt();
+            int B = sc.nextInt();
+
+            if(A <= 0 || A >= 10 || B <= 0 || B >= 10) {
+                break;
+            }
+
+            System.out.println(A + B);
+        }
     }
 }
