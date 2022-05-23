@@ -7,6 +7,8 @@ import java.io.*;
  * 1) 재귀 함수의 반환 타입은 void
  * 2) printf 사용
  * 3) 가장 처음 __ 없이 시작되는 문자열도 재귀함수에 포함되어야 한다.(안그럼 오답)
+ *
+ * 시간 188ms
  */
 public class WhatIsRecursive_17478 {
 
@@ -37,7 +39,7 @@ public class WhatIsRecursive_17478 {
         spec += "____";
 
         f(N-1);
-        
+
         System.out.printf("%s라고 답변하였지.\n",spec2);
 
     }
