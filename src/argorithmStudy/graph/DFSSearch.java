@@ -27,12 +27,13 @@ public class DFSSearch {
 
     public ArrayList<String> dfsFunc(HashMap<String,ArrayList<String>> graph, String start) {
 
-        ArrayList<String> needVisit = new ArrayList<>();
+        ArrayList<String> needVisit = new ArrayList<>(); // 스택으로 진행
         ArrayList<String> visited = new ArrayList<>();
 
         needVisit.add(start);
 
         while(needVisit.size() > 0) {
+            // 스택 정책에 따라서 마지막 인덱스 값 추출
             String node = needVisit.remove(needVisit.size()-1);
 
             if(!visited.contains(node)) {
