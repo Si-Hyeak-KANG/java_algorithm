@@ -13,7 +13,7 @@ import java.util.List;
  *  2) 컬렉션 프레임워크 활용 풀이
  *  3) 메모리 부족 발생
  */
-public class sortNum3_10989 {
+public class SortNum3_10989 {
 
     public static void main(String[] args) throws IOException {
 
