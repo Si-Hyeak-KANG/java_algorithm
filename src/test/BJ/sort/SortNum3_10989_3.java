@@ -1,14 +1,19 @@
 package test.BJ.sort;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 
+/**
+ * point
+ * 1) 버블정렬
+ *
+ * 수행시간 -> 시관 초과
+ */
 public class SortNum3_10989_3 {
 
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         int N = Integer.parseInt(br.readLine());
         int[] arr = new int[N];
@@ -18,23 +23,31 @@ public class SortNum3_10989_3 {
             arr[i] = Integer.parseInt(br.readLine());
         }
 
-        // 0,1,2,3,4 (5)
+        br.close();
+
         // 버블 정렬
-        for (int i = 0; i < arr.length - 1; i++) {
+        for (int i = 0; i < arr.length - 1; i++) { // outside for
 
-            int curr = arr[i];
+            // 검색 대상 인덱스 항상 처음부터 시작
+            int curr = 0;
 
-            for (int j = i + 1; j < arr.length; j++) {
-                if (curr > arr[j]) {
-                    arr[j - 1] = arr[j];
-                    arr[j] = curr;
+            for (int j = 1; j < arr.length - i; j++) { // inner for
+
+                if (arr[curr] > arr[j]) {
+                    int temp = arr[curr];
+                    arr[curr] = arr[j];
+                    arr[j] = temp;
                 }
+
+                curr = j;
             }
         }
 
+        // 출력 for 문
         for (int i : arr) {
-            System.out.println(i);
+            bw.write(i);
         }
 
+        bw.close();
     }
 }

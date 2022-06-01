@@ -7,6 +7,10 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * 퀵 정렬 풀이
+ * -> 메모리 부족
+ */
 public class SortNum3_10989_2 {
 
     public static ArrayList<Integer> quickSort(ArrayList<Integer> arr) {
