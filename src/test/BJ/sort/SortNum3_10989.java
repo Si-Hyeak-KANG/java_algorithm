@@ -18,6 +18,7 @@ public class SortNum3_10989 {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
 
         int N = Integer.parseInt(br.readLine());
         List<Integer> list = new ArrayList<>();
@@ -31,8 +32,10 @@ public class SortNum3_10989 {
         Collections.sort(list);
 
         for(Integer data : list) {
-            System.out.println(data);
+            sb.append(data + "\n");
         }
+
+        System.out.println(sb);
 
     }
 }
