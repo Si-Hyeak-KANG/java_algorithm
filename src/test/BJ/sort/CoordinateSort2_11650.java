@@ -7,6 +7,14 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.StringTokenizer;
 
+/**
+ * point
+ * 1) StringBuilder 를 통해 출력시간 단축
+ * 2) Arrays.sort의 들어갈 인자로 Comparator<int[]> 인터페이스 재정의
+ * 3) 람다식 구현
+ *
+ * 수핵시간 820ms
+ */
 public class CoordinateSort2_11650 {
 
     public static void main(String[] args) throws IOException {
