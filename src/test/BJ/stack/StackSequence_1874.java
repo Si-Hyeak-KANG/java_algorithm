@@ -11,7 +11,7 @@ import java.util.Stack;
  *
  * 수행시간 332ms
  */
-public class StackSequence {
+public class StackSequence_1874 {
 
     public static void main(String[] args) throws IOException {
 

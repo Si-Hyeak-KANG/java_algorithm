@@ -4,6 +4,9 @@ import java.io.*;
 import java.util.HashSet;
 import java.util.StringTokenizer;
 
+/**
+ * 수행시간 440ms
+ */
 public class StringSet_14425 {
 
     public static void main(String[] args) throws IOException {
