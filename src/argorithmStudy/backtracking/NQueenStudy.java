@@ -10,7 +10,7 @@ public class NQueenStudy {
 
         for(int i = 0; i < currentRow; i++) {
             // Promising(조건) 기법
-            if((candidate.get(i) == currentCol || (Math.abs(candidate.get(i)) - currentCol) == currentRow - i)) {
+            if((candidate.get(i) == currentCol )|| (Math.abs(candidate.get(i) - currentCol) == currentRow - i)){
                 // 수직이거나, 대각선일 때
                 return false;
             }
@@ -28,7 +28,7 @@ public class NQueenStudy {
         }
 
         for(int i = 0; i < N; i++) {
-            if(this.isAvailable(currentCandidate, i) == true) {
+            if(this.isAvailable(currentCandidate, i)) {
                 currentCandidate.add(i);
                 this.dfsFunction(N, currentRow + 1, currentCandidate);
                 // Pruning(가지치기) 기법
