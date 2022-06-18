@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 public class NQueenStudy {
 
+    static int count = 0;
+
     public boolean isAvailable(ArrayList<Integer> candidate, Integer currentCol) {
 
         Integer currentRow = candidate.size();
@@ -23,7 +25,8 @@ public class NQueenStudy {
     public void dfsFunction(Integer N, Integer currentRow, ArrayList<Integer> currentCandidate) {
         // 전체 행을 다 돌았다.
         if (currentRow == N) {
-            System.out.println(currentCandidate); // 결과 출력
+            count++;
+            System.out.println(currentCandidate);// 결과 출력
             return;
         }
 
@@ -34,14 +37,14 @@ public class NQueenStudy {
                 // Pruning(가지치기) 기법
                 currentCandidate.remove(currentCandidate.size() - 1);
             }
-
         }
     }
 
     public static void main(String[] args) {
 
         NQueenStudy nObject = new NQueenStudy();
-        nObject.dfsFunction(4, 0, new ArrayList<Integer>());
+        nObject.dfsFunction(8, 0, new ArrayList<Integer>());
+        System.out.println(count);
     }
 
 }
