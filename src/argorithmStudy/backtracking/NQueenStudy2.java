@@ -1,7 +1,5 @@
 package argorithmStudy.backtracking;
 
-import test.ArrayTest;
-
 import java.util.ArrayList;
 
 public class NQueenStudy2 {
@@ -42,7 +40,5 @@ public class NQueenStudy2 {
 
         return true;
     }
-
-
 
 }
