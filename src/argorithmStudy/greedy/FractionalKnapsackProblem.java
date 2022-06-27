@@ -8,7 +8,7 @@ public class FractionalKnapsackProblem {
 
     public static void main(String[] args) {
 
-        Integer[][] objectList = {{10,10},{15,12},{20,10},{25,8},{30,5}};
+        Integer[][] objectList = {{30,5},{15,12},{20,10},{25,8},{10,10}};
 
         FractionalKnapsackProblem test = new FractionalKnapsackProblem();
         test.knapsackFunc(objectList, 30.0);
