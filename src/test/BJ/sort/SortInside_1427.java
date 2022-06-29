@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 // 수행시간 124ms
-public class SortInside {
+public class SortInside_1427 {
 
     public static void main(String[] args) throws IOException {
 
