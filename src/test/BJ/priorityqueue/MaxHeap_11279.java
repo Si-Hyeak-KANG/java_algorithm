@@ -4,17 +4,41 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Collections;
 
-public class MaxHeap {
+// 소름끼치게도 내부구조가 Heap 으로 이루어진 PriorityQueue 클래스 있음,,,,
+public class MaxHeap_11279 {
+
+    static ArrayList<Integer> myHeap = new ArrayList<>();
+
+    static Integer poll(){
+
+        Integer currRoot = myHeap.get(1);
+        int parentIndex = 1;
+        int leftChildIndex = parentIndex * 2;
+        int rightChildIndex = parentIndex * 2 + 1;
+
+        while() {
+
+            // 왼쪽 자식 노드와 오른쪽 자식 노드 크기 비교
+            // case 1 : 왼쪽 자식 노드만 있을 때
+            if(rightChildIndex >= myHeap.size()) {
+                
+            }
+            // case 2 : 둘 다 있을 때
+
+        }
+
+    }
+
+    static void insert() {
+
+    }
 
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
         int N = Integer.parseInt(br.readLine());
-
-        ArrayList<Integer> myHeap = new ArrayList<>();
 
         // 힙의 1/2 인덱스 특성을 활용하기 위해 배열의 0번째 인덱스에는 값을 0을 집어넣는다.
         myHeap.add(0);
@@ -26,14 +50,13 @@ public class MaxHeap {
             if(input == 0) {
 
                 // case1 : 배열에 값이 없을 경우
-                if(myHeap.size() < 2) {
+                if(myHeap.size() == 1 ) {
                     sb.append(0).append('\n');
                 }
                 // case2 : 배열에 값이 있을 경우
                 else {
                     // index 1번이 최대값인 root node 이기 때문에 1번 인덱스의 값을 출력
-                    sb.append(myHeap.get(1)).append('\n');
-                    myHeap.remove(1);
+                    sb.append(myHeap.remove(1)).append('\n');
                 }
 
             }
@@ -55,7 +78,7 @@ public class MaxHeap {
                         int parentNodeIndex = newNodeIndex / 2; // 새로 추가한 노드의 부모 노드
                         // 2-1 : input 이 부모노드보다 클 경우
                         if(myHeap.get(parentNodeIndex) <= myHeap.get(newNodeIndex)) {
-                            Collections.swap(myHeap,parentNodeIndex,newNodeIndex);
+
                             newNodeIndex = parentNodeIndex;
                         }
                         // 2-2 : input 이 부모노드보다 작을 경우
