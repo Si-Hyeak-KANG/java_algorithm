@@ -3,6 +3,7 @@ package test.BJ.string;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 /**
  *
@@ -14,7 +15,21 @@ public class CroatiaAlphabet_2941 {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        String str = br.readLine();
+        String input = br.readLine();
+        int count = 0;
+        int index = 0;
+
+        while(index > input.length()) {
+
+            char c = input.charAt(index);
+            switch (c) {
+
+
+            }
+        }
+
+
+
 
 
 
