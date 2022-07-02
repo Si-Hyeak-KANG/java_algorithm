@@ -22,9 +22,11 @@ public class MaxHeap_11279 {
             // 왼쪽 자식 노드와 오른쪽 자식 노드 크기 비교
             // case 1 : 왼쪽 자식 노드만 있을 때
             if(rightChildIndex >= myHeap.size()) {
-                
+
             }
             // case 2 : 둘 다 있을 때
+            // 2-1 : 왼쪽이 클 때
+            // 2-2 : 오른쪽이 클 때
 
         }
 
