@@ -77,7 +77,7 @@ public class MaxHeap_11279 {
 
             while (indexOfNewData > 1) {
                 // 새로 추가한 데이터가 부모 데이터보다 작은 경우 정렬 X
-                if (myHeap.get(indexOfNewData) < myHeap.get(indexOfNewData / 2)) {
+                if (myHeap.get(indexOfNewData) <= myHeap.get(indexOfNewData / 2)) {
                     break;
                 }
                 // 새로 추가한 데이터가 부모 데이터보다 큰 경우 자리교체

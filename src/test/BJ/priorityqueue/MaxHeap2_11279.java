@@ -7,7 +7,7 @@ import java.util.PriorityQueue;
 
 // PriorityQueue 클래스 사용
 // 내부 요소는 힙으로 구성되어 이진트리 구조로 이루어져 있음
-// 시간 복잡도 O
+// 시간 복잡도 O(NLOGN)
 // StringBuilder 사용 결과 1020ms -> 336ms
 public class MaxHeap2_11279 {
 
