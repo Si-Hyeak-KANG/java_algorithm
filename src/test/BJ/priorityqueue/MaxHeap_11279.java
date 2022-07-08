@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 // 소름끼치게도 내부구조가 Heap 으로 이루어진 PriorityQueue 클래스 있음,,,,
+// 수행 시간 376ms
 public class MaxHeap_11279 {
 
     // Heap 처럼 사용할 배열을 멤버변수로 선언
@@ -14,11 +15,13 @@ public class MaxHeap_11279 {
 
     /**
      * 입력값이 0일 경우 값을 꺼내는 메서드
+     *
      * @return
      */
     static Integer poll() {
 
-        Integer currRootValue = myHeap.get(1); // 출력할 루트
+        Collections.swap(myHeap, 1, myHeap.size() - 1); // 제일 끝에 data 와 출력할 루트 노드와 자리를 교체
+        Integer result = myHeap.remove(myHeap.size() - 1); // 출력할 루트를 배열에서 제거하며 리턴
 
         int parentIndex = 1;
 
@@ -30,27 +33,45 @@ public class MaxHeap_11279 {
             int changeChildIndex = 0; // 자리를 바꿀 자식 인덱스
 
             // 자식 노드 둘다 없을 때
-            if(leftChildIndex >= myHeap.size()) {
+            if (leftChildIndex >= myHeap.size()) {
 
-                myHeap.remove(parentIndex);
                 break;
 
-            // 왼쪽 자식 노드와 오른쪽 자식 노드 크기 비교
-            // case 1 : 왼쪽 자식 노드만 있을 때
+                // 왼쪽 자식 노드와 오른쪽 자식 노드 크기 비교
+                // case 1 : 왼쪽 자식 노드만 있을 때
             } else if (rightChildIndex >= myHeap.size()) {
 
-                changeChildIndex = leftChildIndex;
-
-            // case 2 : 둘 다 있을 때
+                // check : 왼쪽 자식노드가 부모 노드보다 큰가?
+                if (myHeap.get(leftChildIndex) > myHeap.get(parentIndex)) {
+                    changeChildIndex = leftChildIndex;
+                } else {
+                    // 그렇지 않으면, 더 이상 정렬 필요 x
+                    break;
+                }
+                // case 2 : 둘 다 있을 때
             } else {
 
                 // 2-1 : 왼쪽이 클 때
-                if(myHeap.get(leftChildIndex) > myHeap.get(rightChildIndex)) {
-                    changeChildIndex = leftChildIndex;
+                if (myHeap.get(leftChildIndex) > myHeap.get(rightChildIndex)) {
+
+                    // check : 왼쪽 자식노드가 부모 노드보다 큰가?
+                    if (myHeap.get(leftChildIndex) > myHeap.get(parentIndex)) {
+                        changeChildIndex = leftChildIndex;
+                    } else {
+                        // 그렇지 않으면, 더 이상 정렬 필요 x
+                        break;
+                    }
                 }
                 // 2-2 : 오른쪽이 클 때
                 else {
-                    changeChildIndex = rightChildIndex;
+
+                    // check : 오른쪽 자식노드가 부모 노드보다 큰가?
+                    if (myHeap.get(rightChildIndex) > myHeap.get(parentIndex)) {
+                        changeChildIndex = rightChildIndex;
+                    } else {
+                        // 그렇지 않으면, 더 이상 정렬 필요 x
+                        break;
+                    }
                 }
             }
 
@@ -58,12 +79,13 @@ public class MaxHeap_11279 {
             parentIndex = changeChildIndex;
         }
 
-        return currRootValue;
+        return result;
 
     }
 
     /**
      * 입력값이 1이상일 경우 Heap 에 데이터 추가 메서드
+     *
      * @param newData
      */
     static void insert(int newData) {
@@ -87,7 +109,7 @@ public class MaxHeap_11279 {
         }
     }
 
-    // 테스트 실행행
+    // 테스트 실행
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
