@@ -21,7 +21,7 @@ public class SayForMiddle_1655 {
             if(input.charAt(0) == '-') {
                 
             }
-            myLinkedList.add(input);
+            //myLinkedList.add(input);
             int listSize = myLinkedList.size();
             int result = myLinkedList.get(0);
 
