@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-//3 1 0 5 4 2 1 2 3 4 6 0 1 1 9 1 1 1 // 1 2 5
+// 128ms
 public class PrinterQueue_1966 {
 
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -17,67 +17,57 @@ public class PrinterQueue_1966 {
         // 테스트 케이스 입력
         int testCase = Integer.parseInt(br.readLine());
 
+        Queue<Integer> queue = new LinkedList<>(); // 중요도가 들어있는 큐
+        Queue<Integer> indexOfQueue = new LinkedList<>(); // 위치가 저장된 큐
+
         for (int i = 0; i < testCase; i++) {
 
             st = new StringTokenizer(br.readLine());
-            int countOfChar = Integer.parseInt(st.nextToken()); // 문자의 개수
-            int indexOfChar = Integer.parseInt(st.nextToken()); // 몇 번째로 인쇄되었는지 궁금한 문서의 현재 Queue 에서의 위치
-            ArrayList<Integer> myPrinter = new ArrayList<>();
+
+            int countOfChar = Integer.parseInt(st.nextToken()); // 문자의 수
+            int indexOfChar = Integer.parseInt(st.nextToken()); // 찾고자하는 문자의 위치
 
             st = new StringTokenizer(br.readLine());
+            int index = 0; // indexOfQueue에 들어갈 index 정보
+            int count = 0; // 출력 순서
 
+            // 각 큐에 중요도와 인덱스 정보를 저장
             for (int j = 0; j < countOfChar; j++) {
-
-                myPrinter.add(Integer.parseInt(st.nextToken()));
+                queue.add(Integer.parseInt(st.nextToken()));
+                indexOfQueue.add(index++);
             }
 
-            int count = 0;
+            while (queue.size() > 0) {
 
-            while(myPrinter.size() > 0) {
+                // 큐에서 가장 높은 중요도의 값을 찾음
+                int max = queue.stream().mapToInt(n -> n).max().getAsInt();
 
-                int priorityOfCurrentChar = myPrinter.get(indexOfChar);
-                int maxPriority = myPrinter.stream().mapToInt(m -> m).max().getAsInt();
+                // 현재 인쇄할 문서의 중요도가 가장 높지 않을 때
+                if (queue.peek() != max) {
+                    // 각 큐에서 출력할 값을 제일 뒤로 이동
+                    queue.add(queue.poll());
+                    indexOfQueue.add(indexOfQueue.poll());
 
-                // 선택 문서가 가장 높은 중요도를 가졌을 때
-                if (priorityOfCurrentChar == maxPriority) {
+                } else { // 인쇄할 문서의 중요도가 가장 높을 경우
 
-                    // ex) 1 1 1 1 '1'
-                    if(indexOfChar!=0 && myPrinter.get(0) == priorityOfCurrentChar) {
-                        count += indexOfChar;
-                    } else {
-                        // 지금까지의 count 에서 +1 후 출력 -> 우리가 원하는 결과
-                        count+=1;
-                    }
+                    // 인쇄할 문서의 인덱스 정보가 찾고자하는 인덱스와 동일할 때
+                    // count에 1을 더하고, 출력한다. (값 저장 후 while문 종료)
+                    if (indexOfQueue.peek() == indexOfChar) {
 
-                    sb.append(count).append('\n');
-                    break;
+                        count++;
+                        sb.append(count).append('\n');
+                        break;
 
-                } else { // 선택 문서가 가장 높은 중요도가 아닐경우
+                    } else { // 동일하지 않을 때
 
-                    int maxIndex = myPrinter.indexOf(maxPriority);
-                    myPrinter.remove(maxIndex);
-                    count++;
-                    // 1) 가장 높은 중요도를 가장 앞으로 보냈다고 가장하고, 출력(제거)
-                    if(maxIndex != 0){
-                        // 2) 가장 앞에 있는 수를 인덱스 마지막으로 이동
-                        int temp = myPrinter.get(0);
-                        myPrinter.add(temp);
-                        myPrinter.remove(0);
-                    }
-                    // 선택 문서가 0번째라면 제일 배열 끝으로 보내준 것을 적용시켜줘야함.
-                    if(indexOfChar == 0) {
-                        indexOfChar = myPrinter.size()-1;
-                    } else {// 0번째가 아니라면 그냥 위치 한칸으로 이동한 값을 적용 ; -1
-                        if(maxIndex < indexOfChar && maxIndex != 0) {
-                            indexOfChar -= 2;
-                        } else {
-                            indexOfChar -= 1;
-                        }
+                        // 각 큐에서 출력(인쇄)하고, 순서(count)에 +1을 한다.
+                        queue.poll();
+                        indexOfQueue.poll();
+                        count++;
                     }
                 }
             }
-
-        } // testCase for문
+        }
 
         System.out.println(sb);
     }
