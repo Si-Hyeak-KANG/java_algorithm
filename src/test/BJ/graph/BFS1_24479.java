@@ -11,7 +11,7 @@ public class BFS1_24479 {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static StringTokenizer st;
     static StringBuilder sb = new StringBuilder();
-    static int[][] graph;
+    static ArrayList<ArrayList<Integer>> graph;
     static ArrayList<Integer> result;
 
     public static void main(String[] args) throws IOException {
@@ -22,7 +22,7 @@ public class BFS1_24479 {
         int edge = Integer.parseInt(st.nextToken());
         int startPoint = Integer.parseInt(st.nextToken()) - 1;
 
-        graph = new int[node][node];
+        graph = new ArrayList<>();
 
         for (int i = 0; i < edge; i++) {
             st = new StringTokenizer(br.readLine());
