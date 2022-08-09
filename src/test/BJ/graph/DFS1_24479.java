@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 // 1076ms
-public class BFS1_24479 {
+public class DFS1_24479 {
 
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static StringTokenizer st;
@@ -43,7 +43,7 @@ public class BFS1_24479 {
         }
 
         count = 1;
-        bfs(startVertex);
+        dfs(startVertex);
 
         for(int i = 1; i < check.length; i++) {
             sb.append(check[i]).append("\n");
@@ -52,14 +52,14 @@ public class BFS1_24479 {
 
     }
 
-    private static void bfs(int vertex) {
+    private static void dfs(int vertex) {
         check[vertex] = count;
 
             for(int i = 0; i < graph.get(vertex).size(); i++) {
                 int newVertex = graph.get(vertex).get(i);
                 if(check[newVertex] == 0){
                     count++;
-                    bfs(newVertex);
+                    dfs(newVertex);
                 }
             }
 
