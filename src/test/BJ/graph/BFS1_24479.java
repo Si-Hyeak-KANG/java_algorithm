@@ -3,76 +3,65 @@ package test.BJ.graph;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.StringTokenizer;
+import java.util.*;
 
+// 1076ms
 public class BFS1_24479 {
 
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static StringTokenizer st;
     static StringBuilder sb = new StringBuilder();
-    static ArrayList<ArrayList<Integer>> graph;
-    static ArrayList<Integer> result;
+    static ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
+    static int[] check;
+    static int count;
 
     public static void main(String[] args) throws IOException {
 
         st = new StringTokenizer(br.readLine());
 
-        int node = Integer.parseInt(st.nextToken());
+        int vertex = Integer.parseInt(st.nextToken());
         int edge = Integer.parseInt(st.nextToken());
-        int startPoint = Integer.parseInt(st.nextToken()) - 1;
+        int startVertex = Integer.parseInt(st.nextToken());
 
-        graph = new ArrayList<>();
+        check = new int[vertex+1];
 
-        for (int i = 0; i < edge; i++) {
+        for(int i =0; i < vertex+1; i++) {
+            graph.add(new ArrayList<>());
+        }
+
+        for(int i = 0; i < edge; i++) {
             st = new StringTokenizer(br.readLine());
+            int fromVertex = Integer.parseInt(st.nextToken());
+            int toVertex = Integer.parseInt(st.nextToken());
 
-            int startNode = Integer.parseInt(st.nextToken()) - 1;
-            int arriveNode = Integer.parseInt(st.nextToken()) - 1;
-            ++graph[startNode][arriveNode];
-            ++graph[arriveNode][startNode];
+            graph.get(fromVertex).add(toVertex);
+            graph.get(toVertex).add(fromVertex);
         }
 
-        result = new ArrayList<>();
-        bfs(startPoint, 1, startPoint,node);
-
-        for (Integer count : result) {
-            sb.append(count+1).append('\n');
+        for(int i = 1; i < graph.size(); i++) {
+            Collections.sort(graph.get(i));
         }
 
+        count = 1;
+        bfs(startVertex);
+
+        for(int i = 1; i < check.length; i++) {
+            sb.append(check[i]).append("\n");
+        }
         System.out.println(sb);
+
     }
 
-    public static void bfs(int currentNode,int node, int startNode,int nodeCount) {
+    private static void bfs(int vertex) {
+        check[vertex] = count;
 
-        if(node > nodeCount) {
-            return;
-        }
-
-        if(currentNode==startNode) {
-            result.add(0);
-        }
-
-        for (int i = 0; i < nodeCount ; i++) {
-
-            if(graph[currentNode][i] != 0) {
-
-                if(!isVisited(result,i)) {
-                    result.add(i);
-                    bfs(i,++node, startNode, nodeCount);
+            for(int i = 0; i < graph.get(vertex).size(); i++) {
+                int newVertex = graph.get(vertex).get(i);
+                if(check[newVertex] == 0){
+                    count++;
+                    bfs(newVertex);
                 }
             }
-        }
-    }
 
-    public static boolean isVisited(ArrayList<Integer> result,int currNode) {
-
-        for (Integer integer : result) {
-            if(integer==currNode) {
-                return true;
-            }
-        }
-
-        return false;
     }
 }
