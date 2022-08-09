@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 // 1076ms
+// 오름차순
 public class DFS1_24479 {
 
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
