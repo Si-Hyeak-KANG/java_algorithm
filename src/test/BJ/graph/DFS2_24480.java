@@ -27,7 +27,7 @@ public class DFS2_24480 {
         // 0번 인덱스는 더미데이터
         visited = new int[vertex + 1];
 
-        for (int i = 1; i < vertex + 1; i++) {
+        for (int i = 0; i <= vertex+1; i++) {
             graph.add(new ArrayList<>());
         }
 
