@@ -50,7 +50,6 @@ public class DFS1_24479 {
             sb.append(check[i]).append("\n");
         }
         System.out.println(sb);
-
     }
 
     private static void dfs(int vertex) {
@@ -63,6 +62,5 @@ public class DFS1_24479 {
                     dfs(newVertex);
                 }
             }
-
     }
 }
