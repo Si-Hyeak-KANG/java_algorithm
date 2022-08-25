@@ -9,7 +9,7 @@ import java.util.StringTokenizer;
 public class KnightShift_7562 {
 
     static StringTokenizer st;
-    static boolean[][] board;
+    static int[][] board;
 
     public static void main(String[] args) throws IOException {
 
@@ -22,7 +22,7 @@ public class KnightShift_7562 {
 
             int numberOfKnight = Integer.parseInt(br.readLine());
 
-            board = new boolean[numberOfKnight][numberOfKnight];
+            board = new int[numberOfKnight][numberOfKnight];
 
             st = new StringTokenizer(br.readLine());
             int currentColumn = Integer.parseInt(st.nextToken());
@@ -35,12 +35,6 @@ public class KnightShift_7562 {
             ArrayList<Integer> route = new ArrayList<>();
 
             route.add(currentColumn);
-
-            if(currentColumn==targetColumn && targetColumn==targetRow) {
-                sb.append(0).append('\n');
-            } else {
-                board[currentRow][currentColumn] = true;
-                board[targetRow][targetColumn] = true;
 
                 boolean find = false;
             }
