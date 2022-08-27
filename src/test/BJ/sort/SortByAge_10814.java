@@ -4,5 +4,6 @@ public class SortByAge_10814 {
 
     public static void main(String[] args) {
 
+        // 풀이
     }
 }
